@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service ArticleService {
+    rpc ArticleList(ArticleListRequest) returns (ArticleListResponse) {}
+}
+
+message Article {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    string creatAt = 4;
+}
+
+message ArticleListRequest {
+    int32 page = 1;
+    int32 pagesize = 2;
+}
+
+message ArticleListResponse {
+    repeated Article article = 4;
+}
