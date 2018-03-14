@@ -64,11 +64,8 @@ func Init() (*gorm.DB, error){
 
 func GetArticleList() ([]*proto.Article, error) {
 	var article []*proto.Article
-	//result := db.Select("id, title").Find(&article)
 	DB.Find(&article)
-	//fmt.Println(result)s
 	return article, nil
-	//return result, nil
 }
 
 
